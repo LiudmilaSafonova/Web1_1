@@ -139,3 +139,74 @@ body {
 .add-to-cart-btn:hover {
   background-color: #041850;
 }
+
+.checkout-form {
+  max-width: 500px; /* Ограничиваем ширину самой формы */
+  margin: 0 auto;    /* Центрируем форму внутри <main> */
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #062270;
+}
+
+/* Группировка поля ввода и его заголовка */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+/* Стилизация текстовых инпутов */
+.form-group input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Эффект при фокусе на поле ввода */
+.form-group input:focus {
+  border-color: #062270;
+  box-shadow: 0 0 0 3px rgba(6, 34, 112, 0.15);
+}
+
+/* Автоматическая подсветка ошибок валидации браузером */
+.form-group input:invalid:not(:placeholder-shown) {
+  border-color: #e53935;
+}
+
+/* Кнопка отправки формы */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #062270;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #041850;
+}
