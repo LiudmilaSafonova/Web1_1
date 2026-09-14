@@ -66,6 +66,11 @@ body {
     margin: 0;
 }
 
+.cart-preview .cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
 .cart:hover .cart-preview {
     display: block;
 }

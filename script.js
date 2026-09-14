@@ -19,10 +19,18 @@ addToCartButtons.forEach(function (button) {
 
 function showCart() {
   cartPreview.innerHTML = "";
+  let totalPrice = 0;
 
   cart.forEach(function (product) {
     const productElement = document.createElement("p");
     productElement.textContent = product.name + " — " + product.price.toLocaleString("ru-RU") + " ₽";
     cartPreview.appendChild(productElement);
+
+    totalPrice = totalPrice + product.price;
   });
+
+  const totalElement = document.createElement("p");
+  totalElement.classList.add("cart-total");
+  totalElement.textContent = "Итого: " + totalPrice.toLocaleString("ru-RU") + " ₽";
+  cartPreview.appendChild(totalElement);
 }
