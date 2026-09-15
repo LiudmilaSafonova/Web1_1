@@ -1,4 +1,4 @@
-const cart = [];
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
 const cartPreview = document.querySelector(".cart-preview");
 
@@ -28,6 +28,7 @@ addToCartButtons.forEach(function (button) {
 });
 
 function showCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
   cartPreview.innerHTML = "";
   let totalPrice = 0;
 
@@ -94,3 +95,5 @@ function changeQuantity(productId, change) {
 
   showCart();
 }
+
+showCart();
