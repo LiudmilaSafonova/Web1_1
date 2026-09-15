@@ -1,6 +1,8 @@
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const cartItems = document.querySelector("#cart-page-items");
 const cartTotal = document.querySelector("#cart-page-total");
+const checkoutForm = document.querySelector("form.checkout-form");
+const orderMessage = document.querySelector("#order-message");
 let totalPrice = 0;
 
 if (cart.length === 0) {
@@ -18,3 +20,14 @@ cart.forEach(function (product) {
 });
 
 cartTotal.textContent = "Итого: " + totalPrice.toLocaleString("ru-RU") + " ₽";
+
+checkoutForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (cart.length === 0) {
+    orderMessage.textContent = "Добавьте товары в корзину";
+    return;
+  }
+
+  orderMessage.textContent = "Заказ создан!";
+});
