@@ -3,6 +3,8 @@ const cartItems = document.querySelector("#cart-page-items");
 const cartTotal = document.querySelector("#cart-page-total");
 const checkoutForm = document.querySelector("form.checkout-form");
 const orderMessage = document.querySelector("#order-message");
+const orderModal = document.querySelector("#order-modal");
+const orderModalClose = document.querySelector("#order-modal-close");
 
 function showCart() {
   cartItems.innerHTML = "";
@@ -101,7 +103,12 @@ checkoutForm.addEventListener("submit", function (event) {
     return;
   }
 
-  orderMessage.textContent = "Заказ создан!";
+  orderMessage.textContent = "";
+  orderModal.hidden = false;
+});
+
+orderModalClose.addEventListener("click", function () {
+  orderModal.hidden = true;
 });
 
 showCart();

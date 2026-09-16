@@ -6,12 +6,20 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  font-family: "Bookman Old Style", Bookman, Georgia, serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 
 .container {
   max-width: 1500px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   background-color: #ffffff;
   min-height: 100vh;
@@ -28,7 +36,12 @@ body {
 }
 
 .site-title {
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.site-name {
+    color: #062270;
 }
 
 .cart {
@@ -335,6 +348,51 @@ body {
   font-weight: bold;
 }
 
+.order-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.order-modal[hidden] {
+  display: none;
+}
+
+.order-modal-content {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.order-modal-title {
+  margin-top: 0;
+  color: #062270;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.order-modal-close {
+  padding: 10px 24px;
+  background-color: #062270;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Телефон */
 @media (max-width: 600px) {
   .main-header {
@@ -351,7 +409,7 @@ body {
 
   .site-title {
     flex: none;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .cart {
