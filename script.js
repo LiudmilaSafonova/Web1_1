@@ -36,16 +36,20 @@ function showCart() {
     const emptyCartElement = document.createElement("p");
     emptyCartElement.textContent = "Корзина пуста";
     cartPreview.appendChild(emptyCartElement);
-    return;
   }
 
   cart.forEach(function (product) {
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart-item");
 
-    const productElement = document.createElement("p");
-    productElement.textContent = product.name + " — " + product.price.toLocaleString("ru-RU") + " ₽";
-    cartItem.appendChild(productElement);
+    const productNameElement = document.createElement("p");
+    productNameElement.textContent = product.name;
+    cartItem.appendChild(productNameElement);
+
+    const productPriceElement = document.createElement("p");
+    productPriceElement.classList.add("cart-product-price");
+    productPriceElement.textContent = (product.price * product.quantity).toLocaleString("ru-RU") + " ₽";
+    cartItem.appendChild(productPriceElement);
 
     const quantityControls = document.createElement("div");
     quantityControls.classList.add("quantity-controls");
@@ -76,10 +80,18 @@ function showCart() {
     totalPrice = totalPrice + product.price * product.quantity;
   });
 
-  const totalElement = document.createElement("p");
-  totalElement.classList.add("cart-total");
-  totalElement.textContent = "Итого: " + totalPrice.toLocaleString("ru-RU") + " ₽";
-  cartPreview.appendChild(totalElement);
+  if (cart.length > 0) {
+    const totalElement = document.createElement("p");
+    totalElement.classList.add("cart-total");
+    totalElement.textContent = "Итого: " + totalPrice.toLocaleString("ru-RU") + " ₽";
+    cartPreview.appendChild(totalElement);
+  }
+
+  const checkoutLink = document.createElement("a");
+  checkoutLink.href = "cart.html";
+  checkoutLink.classList.add("checkout-link");
+  checkoutLink.textContent = "Перейти к заказу";
+  cartPreview.appendChild(checkoutLink);
 }
 
 function changeQuantity(productId, change) {
