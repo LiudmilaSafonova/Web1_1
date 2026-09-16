@@ -393,6 +393,33 @@ textarea {
   cursor: pointer;
 }
 
+/* Планшет */
+@media (max-width: 900px) {
+  .main-header {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .logo-img {
+    width: 200px;
+  }
+
+  .site-title {
+    flex: 1 1 200px;
+    font-size: 24px;
+  }
+
+  .cart-button {
+    width: 200px;
+  }
+
+  .page-title,
+  .products-grid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
 /* Телефон */
 @media (max-width: 600px) {
   .main-header {
