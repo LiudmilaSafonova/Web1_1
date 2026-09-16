@@ -334,3 +334,99 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
+/* Планшет */
+@media (max-width: 900px) {
+  .main-header {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .logo-img {
+    width: 200px;
+  }
+
+  .site-title {
+    flex: 1 1 200px;
+    font-size: 20px;
+  }
+
+  .cart-button {
+    width: 200px;
+  }
+
+  .page-title,
+  .products-grid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* Телефон */
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo-img {
+    width: 150px;
+    max-width: 100%;
+  }
+
+  .site-title {
+    flex: none;
+    font-size: 18px;
+  }
+
+  .cart {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cart-button {
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .cart-preview {
+    right: 50%;
+    width: calc(100vw - 20px);
+    max-width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+    transform: translateX(50%);
+  }
+
+  .page-title {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 24px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  .cart-content {
+    gap: 16px;
+  }
+
+  .cart-content .checkout-form {
+    flex-basis: 100%;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .product-info {
+    width: 200px;
+  }
+}
